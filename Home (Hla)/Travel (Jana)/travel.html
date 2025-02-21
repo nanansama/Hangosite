@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+ <html>
+    <head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar & Buttons</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 20px;
+        }
+
+        .sidebar.open {
+            width: 180px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Subcategory Menu */
+        .subcategory {
+            display: none;
+            padding-left: 15px;
+            background-color: #444;
+        }
+
+        .subcategory a {
+            padding: 10px;
+            display: block;
+            color: white;
+        }
+
+        /* Change color of the "Food" button */
+        .subcategory a:first-child {
+            color: white;
+            font-weight: bold;
+        }
+
+        .subcategory a:first-child:hover {
+            color: #BED4F9; /* Periwinkle */
+        }
+
+        /* Sidebar Toggle Button */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #DCBE9F; /* Tan */
+            border: none;
+            padding: 10px 15px;
+            margin-top: 15px;
+            position: absolute;
+            left: 15px;
+            border-radius: 5px;
+        }
+
+        /* Close Button Styling */
+        .closebtn {
+            background-color: #1E90FF; /* Blue */
+            padding: 10px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .closebtn:hover {
+            background-color: #1565C0; /* Darker Blue */
+        }
+    </style>
+      <style>
+         body{
+            background-color: white;
+}
+        </style>
+         <title>Page in the entertainment website</title>
+          <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <link rel="stylesheet" type="text/css" href="css/styles.css">
+           </head>
+       <body> <!-- Sidebar Toggle Button -->
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+
+    <!-- Sidebar Navigation -->
+    <div id="mySidebar" class="sidebar">
+        <button class="closebtn" onclick="toggleNav()">Close &times;</button>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+
+        <!-- Category with Subcategories -->
+        <a href="javascript:void(0)" onclick="toggleSubcategories()">Category ▼</a>
+        <div class="subcategory" id="subcategoryMenu">
+            <a href="#">Food</a>
+            <a href="#">Travel</a>
+            <a href="#">Farhada</a>
+        </div>
+
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- JavaScript to handle sidebar and category dropdown -->
+    <script>
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+
+            sidebar.classList.toggle("open");
+
+            // Close subcategories when sidebar closes
+            if (!sidebar.classList.contains("open")) {
+                subcategoryMenu.style.display = "none";
+            }
+        }
+
+        function toggleSubcategories() {
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+            subcategoryMenu.style.display = subcategoryMenu.style.display === "block" ? "none" : "block";
+        }
+        <a href="atom.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="javascript:void(0)" onclick="toggleSubcategories()">Category ▼</a>
+<div class="subcategory" id="subcategoryMenu">
+    <a href="food.html">Food</a>
+    <a href="travel.html">Travel</a>
+    <a href="hangouts.html">Farhada</a>
+</div>
+<a href="contact.html">Contact</a>
+    </script>
+
+         <div class="hangout-section">
+            <div class="container">
+              <div class="row">
+                <div class="title">
+                  <h1>Travels</h1>
+                  <p>Traveling is not just about visiting new places; it’s about immersing yourself in different cultures,
+                    meeting people from all walks of life, experiencing unique traditions, and gaining a fresh perspective on the world,
+                    all while creating unforgettable memories that shape your understanding of life and broaden your horizons.</p>
+                  </div>
+                </div>
+              <div class="about-places">
+                <div class="places">
+                  <div class="image-section">
+                    <img src="img/egypt.jpg">
+                  </div>
+                  <div class="content">
+                    <h3>Pyramids</h3>
+                    <h4><a href="https://www.tripadvisor.com" target="_blank">Learn More About The Pyramids!</a></h4>
+                    <p>The pyramids of Egypt are among the most iconic and enduring symbols of ancient civilization.
+                       Built over 4,000 years ago,
+                        these massive structures served as tombs for pharaohs and were designed to ensure their journey to the afterlife.
+                        The most famous of these is the Great Pyramid of Giza, constructed for Pharaoh Khufu,
+                         which remains one of the Seven Wonders of the Ancient World.
+                         The precision and engineering skills required to build these monuments continue to amaze historians and archaeologists today.
+                          The pyramids stand as a testament to the ingenuity, religious beliefs, and organizational abilities of ancient Egyptian society.</p>
+                     </div>
+                   </div>
+                <div class="places">
+                  <div class="image-section">
+                    <img src="img/luxor.webp">
+                  </div>
+                  <div class="content">
+                    <h3>Luxor Travels</h3>
+                    <h4><a href="https://luxortravels.com" target="_blank">Learn More About Luxor!</a></h4>
+                    <p>Luxor, often called the “world’s greatest open-air museum,” is a must-visit destination in Egypt,
+                      offering travelers a glimpse into the grandeur of ancient Egyptian civilization.
+                       Located on the east and west banks of the Nile River, Luxor is home to stunning historical sites,
+                       including the Karnak Temple, Luxor Temple, and the Valley of the Kings, where the tomb of Tutankhamun was discovered.
+                        Visitors can explore majestic temples, intricate tombs, and vibrant local markets while enjoying the city’s warm hospitality.
+                        A hot air balloon ride over the West Bank at sunrise provides breathtaking views of the ancient ruins and desert landscape.
+                         Whether you’re a history enthusiast or a casual traveler, Luxor offers an unforgettable journey into Egypt’s rich past.</p>
+                     </div>
+                  </div>
+                <div class="places">
+                  <div class="image-section">
+                    <img src="img/dahab.jpg">
+                  </div>
+                  <div class="content">
+                    <h3>Dahab Travels</h3>
+                    <h4><a href="https://travelways-egypt.com" target="_blank">Learn More About Dahab!</a></h4>
+                    <p>Dahab, a laid-back coastal town on Egypt’s Sinai Peninsula, is a paradise for travelers seeking adventure,
+                      relaxation, and natural beauty.
+                      Known for its golden beaches, crystal-clear waters, and vibrant coral reefs, Dahab is a top destination for snorkeling and diving,
+                       with sites like the famous Blue Hole and the Canyon attracting enthusiasts from around the world. Beyond the sea,
+                       visitors can explore the rugged Sinai Desert on camel or jeep safaris, hike to the stunning Colored Canyon,
+                        or experience the tranquility of the nearby Saint Catherine’s Monastery. With its relaxed atmosphere, charming cafes,
+                        and Bedouin hospitality,
+                        Dahab offers a perfect blend of adventure and serenity, making it a must-visit spot for travelers in Egypt.</p>
+                   </div>
+               </div>
+            <div class="places">
+              <div class="image-section">
+                <img src="img/fayoum.webp">
+              </div>
+              <div class="content">
+                <h3>Fayoum Travels</h3>
+                <h4><a href="https://www.fayoumtravelguide.com" target="_blank">Learn More About Fayoum!</a></h4>
+                <p>Fayoum, a hidden gem just a short drive from Cairo, offers travelers a perfect blend of nature, history, and adventure.
+                   Known for its breathtaking desert landscapes, lush oases, and ancient ruins,
+                    Fayoum is home to stunning attractions like Wadi El Rayan, where travelers can see Egypt’s only waterfalls,
+                    and Wadi Al-Hitan, a UNESCO World Heritage site filled with prehistoric whale fossils.
+                     Visitors can explore the picturesque Qarun Lake, enjoy sandboarding on the golden dunes, or discover the charm of Tunis Village,
+                     famous for its pottery and artistic atmosphere. With its mix of relaxation, history, and outdoor activities,
+                      Fayoum is an ideal escape for those looking to experience a different side of Egypt.</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          </div>
+        </body>
+    </html>

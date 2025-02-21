@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HanGo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <style>
+        @font-face {
+            font-family: 'Arose';
+            src: url('Arose.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Roadway Country';
+            src: url('RoadwayCountry.ttf') format('truetype');
+        }
+
+        /* General Styles */
+        body {
+            font-family: 'Roadway Country', sans-serif;
+            margin: 0;
+            text-align: center;
+            background-color: #F1E7D7; /* Antique White */
+            color: #1E2952; /* Space Cadet */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 20px;
+        }
+
+        .sidebar.open {
+            width: 180px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Subcategory Menu */
+        .subcategory {
+            display: none;
+            padding-left: 15px;
+            background-color: #444;
+        }
+
+        .subcategory a {
+            padding: 10px;
+            display: block;
+            color: white;
+        }
+
+        .subcategory a:first-child {
+            font-weight: bold;
+        }
+
+        /* Sidebar Toggle Button */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #DCBE9F;
+            border: none;
+            padding: 10px 15px;
+            margin-top: 15px;
+            position: absolute;
+            left: 15px;
+            border-radius: 5px;
+        }
+
+        /* Close Button Styling */
+        .closebtn {
+            background-color: #00003f;
+            padding: 10px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .closebtn:hover {
+            background-color: #00003f;
+        }
+
+        /* Main content area */
+        .main-content {
+            transition: margin-left 0.5s;
+            padding: 16px;
+            text-align: center;
+        }
+
+        /* Custom Font Usage */
+        .main-content h2 {
+            font-family: 'Arose', serif;
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 60px;
+        }
+
+        .main-content p {
+            font-size: 20px;
+            color: black;
+        }
+
+        /* Carousel container */
+        .carousel-container {
+            max-width: 80%;
+            margin: auto;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-inner img {
+            width: 80%;
+            height: auto;
+            max-height: 400px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        /* Sidebar and Carousel Interaction */
+        .sidebar.open + .carousel-container {
+            transform: translateX(-90px);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .sidebar.open {
+                width: 150px;
+            }
+            .carousel-inner img {
+                width: 90%;
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar.open {
+                width: 130px;
+            }
+            .carousel-inner img {
+                width: 100%;
+                max-height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Toggle Button -->
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+
+    <!-- Sidebar Navigation -->
+    <div id="mySidebar" class="sidebar">
+        <button class="closebtn" onclick="toggleNav()">Close &times;</button>
+        <a href="atom.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="javascript:void(0)" onclick="toggleSubcategories()">Category ▼</a>
+        <div class="subcategory" id="subcategoryMenu">
+            <a href="food.html">Food</a>
+            <a href="travel.html">Travel</a>
+            <a href="hangouts.html">Farhada</a>
+        </div>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>HanGo</h2>
+        <p>Your Hangout, Movie, and Food Guide.</p>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="carousel-container">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/ps.jpeg" alt="Pyramids">
+                    <div class="carousel-caption">
+                        <h3>The Sphinx & The Great Pyramids</h3>
+                        <p>Explore Egyptology and the great history of Ancient Egypt!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/z.jpeg" alt="Zooba">
+                    <div class="carousel-caption">
+                        <h3>Zooba</h3>
+                        <p>Experience Egyptian cuisine with a twist!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/b.avif" alt="Hot-Air Balloons">
+                    <div class="carousel-caption">
+                        <h3>Hot-Air Balloons</h3>
+                        <p>Aswan or Fayoum—choose your place & view!</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle sidebar and category dropdown -->
+    <script>
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+
+            sidebar.classList.toggle("open");
+
+            if (!sidebar.classList.contains("open")) {
+                subcategoryMenu.style.display = "none";
+            }
+        }
+
+        function toggleSubcategories() {
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+            subcategoryMenu.style.display = subcategoryMenu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>

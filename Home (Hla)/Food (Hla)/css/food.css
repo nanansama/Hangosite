@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+*{
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+   font-family:'Lato' , sans-serif;
+}
+.hangout-section{
+   width: 100%;
+}
+.hangout-section .container{
+  width: 80%;
+  margin: auto;
+}
+.hangout-section .container .row{
+  width: 60%;
+  margin: auto;
+}
+.hangout-section .container .title{
+  text-align: center;
+  margin-top: 50px;
+}
+.hangout-section .container .title h1{
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1E2952;
+}
+.hangout-section .container .title p{
+  font-size: 18px;
+  font-family: sans-serif;
+  font-style: oblique;
+  margin: 30px 0px;
+  color: black;
+}
+.hangout-section .container .about-places{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+.hangout-section .container .about-places .places{
+  width: 100%;
+  background-color: #DCBE9F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  cursor: pointer;
+}
+.hangout-section .container .about-places .places:hover{
+  background-color: #F1E7D7;
+  transition: 1.0s;
+}
+.hangout-section .container .about-places .places .image-section img{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 6px solid #DCBE9F;
+}
+.hangout-section .container .about-places .places .content{
+  width: 100%;
+  text-align: center;
+}
+.hangout-section .container .about-places .places .content h3{
+   font-size: 27px;
+   margin-top: 10px;
+   letter-spacing: 1.5px;
+   color:  #1E2952;
+}
+.hangout-section .container .about-places .places .content h4{
+   font-size: 17px;
+   margin-top: 10px;
+   letter-spacing: 1.5px;
+   color:  blue;
+}
+.hangout-section .container .about-places .places .content p{
+   font-size: 15px;
+   margin-top: 16px 0px;
+   line-height: 1.5;
+   color:  black;
+}
+@media screen and (max-width: 900px){
+  .hangout-section .container .about-places{
+
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+@media screen and (max-width: 900px){
+  .hangout-section .container .about-places{
+
+    grid-template-columns: repeat(2, 1fr);
+
+}
+}
+@media screen and (max-width: 900px){
+  .hangout-section .container .about-places{
+
+    grid-template-columns: 1fr;
+
+}
+}

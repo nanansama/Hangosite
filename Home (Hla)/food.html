@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foods & Drinks</title>
+
+    <!-- Bootstrap & CSS -->
+    <link rel="stylesheet" href="css/food.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            border-radius: 20px;
+            z-index: 999;
+        }
+
+        .sidebar.open {
+            width: 180px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* Subcategory Menu */
+        .subcategory {
+            display: none;
+            padding-left: 15px;
+            background-color: #444;
+        }
+
+        .subcategory a {
+            padding: 10px;
+            display: block;
+            color: white;
+        }
+
+        /* Sidebar Toggle Button */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            color: white;
+            background-color: #DCBE9F;
+            border: none;
+            padding: 10px 15px;
+            position: fixed;
+            top: 10px;
+            left: 15px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        /* Close Button */
+        .closebtn {
+            background-color: #00003f;
+            padding: 10px;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .closebtn:hover {
+            background-color: #00003f;
+        }
+
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Toggle Button -->
+    <button class="openbtn" onclick="toggleNav()">☰</button>
+
+    <!-- Sidebar Navigation -->
+    <div id="mySidebar" class="sidebar">
+        <button class="closebtn" onclick="toggleNav()">Close &times;</button>
+        <a href="atom.html">Home</a>
+        <a href="about.html">About Us</a>
+
+        <!-- Category with Subcategories -->
+        <a href="javascript:void(0)" onclick="toggleSubcategories()">Category ▼</a>
+        <div class="subcategory" id="subcategoryMenu">
+            <a href="food.html">Food</a>
+            <a href="travel.html">Travel</a>
+            <a href="hangouts.html">Farhada</a>
+        </div>
+
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Foods & Drinks Section -->
+    <div class="hangout-section">
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h1>Foods & Drinks</h1>
+                    <p>Experience various cuisines in Egypt with your friends or on your own.
+                        You can find different restaurants all over Egypt with various aesthetics, prices, foods, and drinks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-places">
+                <!-- Zooba -->
+                <div class="places">
+                    <div class="image-section">
+                        <img src="foodimg/1.jpeg" alt="Zooba">
+                    </div>
+                    <div class="content">
+                        <h3>Zooba</h3>
+                        <h4><a href="https://www.instagram.com/zooba" target="_blank">Learn More About Zooba!</a></h4>
+                        <p>
+                            Showcasing traditional Egyptian food at its best, Zooba is a street food staple in Cairo.
+                            Locations: Grand Museum, Zamalek, Citystars, Maadi, Downtown Mall, and more.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Cake Cafe -->
+                <div class="places">
+                    <div class="image-section">
+                        <img src="foodimg/2c.jpg" alt="Cake Cafe">
+                    </div>
+                    <div class="content">
+                        <h3>Cake Cafe</h3>
+                        <h4><a href="https://www.instagram.com/cakecafecairo" target="_blank">Learn More About Cake Cafe!</a></h4>
+                        <p>
+                            A favorite cafe since 2013, Cake Cafe serves breakfast, sandwiches, and of course, delicious desserts.
+                            Locations: Sheikh Zayed, 6 October, New Cairo, and the North Coast.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bon Appetit -->
+                <div class="places">
+                    <div class="image-section">
+                        <img src="foodimg/3b.jpg" alt="Bon Appetit">
+                    </div>
+                    <div class="content">
+                        <h3>Bon Appetit</h3>
+                        <h4><a href="https://www.instagram.com/bonappetit19101" target="_blank">Learn More About Bon Appetit!</a></h4>
+                        <p>
+                            Established in 1986, Bon Appetit is a well-known bakery and cafe offering high-quality food at reasonable prices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sip -->
+                <div class="places">
+                    <div class="image-section">
+                        <img src="foodimg/4s.jpg" alt="Sip">
+                    </div>
+                    <div class="content">
+                        <h3>Sip</h3>
+                        <h4><a href="https://www.instagram.com/sip.egypt" target="_blank">Learn More About Sip!</a></h4>
+                        <p>
+                            A premium specialty coffee shop from Lebanon, Sip offers great coffee and brunch options.
+                            Locations: Zamalek, Cinema Radio, Diplo 3, and the North Coast.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+
+            sidebar.classList.toggle("open");
+
+            // Close subcategories when sidebar closes
+            if (!sidebar.classList.contains("open")) {
+                subcategoryMenu.style.display = "none";
+            }
+        }
+
+        function toggleSubcategories() {
+            var subcategoryMenu = document.getElementById("subcategoryMenu");
+            subcategoryMenu.style.display = subcategoryMenu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
